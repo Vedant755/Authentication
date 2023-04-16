@@ -1,0 +1,17 @@
+package com.example.authentication.api
+
+import com.example.authentication.model.UserRequest
+import com.example.authentication.model.UserResponse
+import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.POST
+
+interface ApiInterface {
+
+    @POST("/users/signup")
+    suspend fun signup(@Body userRequest: UserRequest) : Response<UserResponse>
+
+    @POST("/users/signin")
+    suspend fun signin(@Body userRequest: UserRequest) : Response<UserResponse>
+
+}
